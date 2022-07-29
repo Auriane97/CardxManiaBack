@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Lot {
@@ -15,9 +16,9 @@ public class Lot {
 	
 	private int note;
 
-	@ManyToOne
+	@OneToMany
 	private List<User> acheteur = new ArrayList();
-	@ManyToOne
+	@OneToMany
 	private List<User> vendeur = new ArrayList();
 
 	

@@ -2,6 +2,7 @@ package model;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 
 @Entity
@@ -10,7 +11,7 @@ public class User extends Compte {
 	
 	
 	
-	@OneToMany
+	@OneToOne
 	private Exemplaire exemplaire;
 	
 	
