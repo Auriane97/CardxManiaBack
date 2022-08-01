@@ -1,12 +1,27 @@
 package model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
+
+@Entity
 public class Carte {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	protected Integer IdCarte;
 	
 	protected int cote;
 	//private byte photo;
 	private String description;
 	private Serie serie;
 	
+	
+	public Carte() {}
+
 	public Carte(int cote, String description, Serie serie) {
 		this.cote = cote;
 		this.description = description;
@@ -39,7 +54,14 @@ public class Carte {
 	}
 
 	
-	
+	public Integer getIdCarte() {
+		return IdCarte;
+	}
+
+	public void setIdCarte(Integer idCarte) {
+		IdCarte = idCarte;
+	}
+
 	public String toString() {
 		return "Carte [cote=" + cote + ", description=" + description + ", serie=" + serie + "]";
 	}
