@@ -2,6 +2,7 @@ package test;
 
 import java.util.Scanner;
 
+import context.Singleton;
 import dao.DAOAchat;
 import dao.DAOAdmin;
 import dao.DAOCompte;
@@ -181,7 +182,7 @@ public class Test {
 		String mail = saisieString("Saisir votre mail : ");
 
 
-		User u = new User(pseudo,password,mail,code,total);
+		User u = new User(pseudo,password,mail,code);
 		//daoC.insert(u);
 		System.out.println("Vous etes inscrits, BIENVENUE ! ");
 
@@ -216,6 +217,8 @@ public class Test {
 
 	public static void main(String[] args) {
 
+		Singleton.getInstance();
+		
 		menuPrincipal();
 		inscription();
 

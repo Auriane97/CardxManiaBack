@@ -9,7 +9,7 @@ import javax.persistence.EntityTransaction;
 import model.Achat;
 
 public class DAOAchat implements IDAOAchat {
-
+/*
 	@Override
 	public achat findById(Integer id) {
 		achat a = null;
@@ -114,6 +114,6 @@ public class DAOAchat implements IDAOAchat {
 		return achats;
 	}
 
-	
+	*/
 
 }
