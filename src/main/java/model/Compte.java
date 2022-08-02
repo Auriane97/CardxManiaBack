@@ -1,11 +1,16 @@
 package model;
 
+import java.util.List;
+
+import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
+@DiscriminatorColumn(name="type_compte")
 public abstract class Compte {
 	
 	@Id
@@ -16,21 +21,30 @@ public abstract class Compte {
 	protected String pseudo;
 	protected String password;
 	protected String mail;
-	protected Integer total;
+	protected transient Integer total;
+	
+	@OneToMany(mappedBy="user")
+	protected List<Exemplaire> exemplaires;
+	
+	@OneToMany(mappedBy="vendeur")
+	protected List<Lot> ventes;
+	
+	@OneToMany(mappedBy="acheteur")
+	protected List<Lot> achats;
+	
 	
 	
 	public Compte() {
 		
 	}
 	
-	public Compte(String pseudo, String password, String mail, Integer code, Integer total ) {
+	public Compte(String pseudo, String password, String mail, Integer code) {
 
 		this.pseudo = pseudo;
 		this.password = password;
 		this.mail=mail;
 		this.code=code;
-		this.total=total;
-
+		
 	}
 	
 
@@ -82,6 +96,30 @@ public abstract class Compte {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public List<Exemplaire> getExemplaires() {
+		return exemplaires;
+	}
+
+	public void setExemplaires(List<Exemplaire> exemplaires) {
+		this.exemplaires = exemplaires;
+	}
+
+	public List<Lot> getVentes() {
+		return ventes;
+	}
+
+	public void setVentes(List<Lot> ventes) {
+		this.ventes = ventes;
+	}
+
+	public List<Lot> getAchats() {
+		return achats;
+	}
+
+	public void setAchats(List<Lot> achats) {
+		this.achats = achats;
 	}
 
 

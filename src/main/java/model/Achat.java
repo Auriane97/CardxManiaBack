@@ -20,7 +20,7 @@ public class Achat {
 	
 	private LocalDate dateAchat;
 	
-	@OneToMany (mappedBy="Achat")
+	@OneToMany (mappedBy="achat")
 	private List<Lot> lot =new ArrayList();
 	
 	

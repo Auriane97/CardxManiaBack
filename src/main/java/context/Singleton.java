@@ -1,0 +1,139 @@
+package context;
+
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import dao.DAOAchat;
+import dao.IDAOAchat;
+
+
+
+public class Singleton {
+
+private EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistenceJPA");
+	
+
+	private IDAOAchat daoAchat = new DAOAchat();
+	private IDAOEvenement daoEvenement= new DAOEvenement();
+	private IDAOIntervenant daoIntervenant = new DAOIntervenant();
+	private IDAOParticipation daoParticipation = new DAOParticipation();
+	private IDAOPrestation daoPrestation = new DAOPrestation();
+	private IDAOSpectateur daoSpectateur = new DAOSpectateur();
+	
+
+	
+	
+	
+	
+	private static Singleton instance;
+
+	
+	private Singleton() {}
+	
+	
+	
+	public static Singleton getInstance() {
+		if(instance == null) 
+		{
+			instance=new Singleton();
+		}
+		
+		return instance;
+	}
+
+
+
+	public IDAOAchat getDaoAchat() {
+		return daoAchat;
+	}
+
+
+
+	public void setDaoAchat(IDAOAchat daoAchat) {
+		this.daoAchat = daoAchat;
+	}
+
+
+
+	public IDAOEvenement getDaoEvenement() {
+		return daoEvenement;
+	}
+
+
+
+	public void setDaoEvenement(IDAOEvenement daoEvenement) {
+		this.daoEvenement = daoEvenement;
+	}
+
+
+
+	public IDAOIntervenant getDaoIntervenant() {
+		return daoIntervenant;
+	}
+
+
+
+	public void setDaoIntervenant(IDAOIntervenant daoIntervenant) {
+		this.daoIntervenant = daoIntervenant;
+	}
+
+
+
+	public IDAOParticipation getDaoParticipation() {
+		return daoParticipation;
+	}
+
+
+
+	public void setDaoParticipation(IDAOParticipation daoParticipation) {
+		this.daoParticipation = daoParticipation;
+	}
+
+
+
+	public IDAOPrestation getDaoPrestation() {
+		return daoPrestation;
+	}
+
+
+
+	public void setDaoPrestation(IDAOPrestation daoPrestation) {
+		this.daoPrestation = daoPrestation;
+	}
+
+
+
+	public IDAOSpectateur getDaoSpectateur() {
+		return daoSpectateur;
+	}
+
+
+
+	public void setDaoSpectateur(IDAOSpectateur daoSpectateur) {
+		this.daoSpectateur = daoSpectateur;
+	}
+
+
+
+	public EntityManagerFactory getEmf() {
+		return emf;
+	}
+
+
+
+	public void setEmf(EntityManagerFactory emf) {
+		this.emf = emf;
+	}
+
+	
+	
+	
+
+
+	
+	
+	
+	
+
+}
+
