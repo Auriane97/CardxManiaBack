@@ -8,7 +8,7 @@ import javax.persistence.EntityTransaction;
 
 import model.Achat;
 
-public class DAOAchat implements IDAO Achat {
+public class DAOAchat implements IDAOAchat {
 
 	@Override
 	public achat findById(Integer id) {

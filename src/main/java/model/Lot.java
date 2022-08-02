@@ -13,7 +13,8 @@ import javax.persistence.OneToMany;
 @Entity
 public class Lot {
 
-	
+	@ManyToOne
+	private Achat achat;
 	private int note;
 
 	@OneToMany
