@@ -10,17 +10,17 @@ import dao.IDAOAchat;
 
 public class Singleton {
 
-private EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistenceJPA");
+private EntityManagerFactory emf = Persistence.createEntityManagerFactory("projetFinalBackJPA");
 	
 
 	private IDAOAchat daoAchat = new DAOAchat();
-	private IDAOEvenement daoEvenement= new DAOEvenement();
+	/*private IDAOEvenement daoEvenement= new DAOEvenement();
 	private IDAOIntervenant daoIntervenant = new DAOIntervenant();
 	private IDAOParticipation daoParticipation = new DAOParticipation();
 	private IDAOPrestation daoPrestation = new DAOPrestation();
 	private IDAOSpectateur daoSpectateur = new DAOSpectateur();
 	
-
+*/
 	
 	
 	
@@ -55,7 +55,7 @@ private EntityManagerFactory emf = Persistence.createEntityManagerFactory("persi
 
 
 
-	public IDAOEvenement getDaoEvenement() {
+	/*public IDAOEvenement getDaoEvenement() {
 		return daoEvenement;
 	}
 
@@ -112,7 +112,7 @@ private EntityManagerFactory emf = Persistence.createEntityManagerFactory("persi
 	public void setDaoSpectateur(IDAOSpectateur daoSpectateur) {
 		this.daoSpectateur = daoSpectateur;
 	}
-
+*/
 
 
 	public EntityManagerFactory getEmf() {

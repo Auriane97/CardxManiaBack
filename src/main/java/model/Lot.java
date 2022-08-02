@@ -13,52 +13,78 @@ import javax.persistence.OneToMany;
 @Entity
 public class Lot {
 
-	@ManyToOne
-	private Achat achat;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	
+	@OneToMany(mappedBy = "lot")
+	private List<Achat> achats;
 	private int note;
 
-	@OneToMany
-	private List<User> acheteur = new ArrayList();
-	@OneToMany
-	private List<User> vendeur = new ArrayList();
+	@ManyToOne
+	private User acheteur;
+	@ManyToOne
+	private User vendeur;
 
 	
-	
-	
-	public Lot(int note, List<User> acheteur, List<User> vendeur) {
-		super();
-		this.note = note;
-		this.acheteur = acheteur;
-		this.vendeur = vendeur;
-	}
 	
 	public Lot() {
 	}
+
+	
+	public Lot(User acheteur, User vendeur) {
+	
+		this.acheteur = acheteur;
+		this.vendeur = vendeur;
+	}
+
 
 	public int getNote() {
 		return note;
 	}
 
-	public List<User> getAcheteur() {
-		return acheteur;
-	}
-
-	public List<User> getVendeur() {
-		return vendeur;
-	}
+	
 
 	public void setNote(int note) {
 		this.note = note;
 	}
 
-	public void setAcheteur(List<User> acheteur) {
+	
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	
+	public List<Achat> getAchats() {
+		return achats;
+	}
+
+
+	public void setAchats(List<Achat> achats) {
+		this.achats = achats;
+	}
+
+
+	public User getAcheteur() {
+		return acheteur;
+	}
+
+	public void setAcheteur(User acheteur) {
 		this.acheteur = acheteur;
 	}
 
-	public void setVendeur(List<User> vendeur) {
-		this.vendeur = vendeur;
+	public User getVendeur() {
+		return vendeur;
 	}
 
+	public void setVendeur(User vendeur) {
+		this.vendeur = vendeur;
+	}
 
 	@Override
 	public String toString() {

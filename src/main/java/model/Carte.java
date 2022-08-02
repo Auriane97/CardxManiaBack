@@ -1,5 +1,7 @@
 package model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -7,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.OneToMany;
 
 
 
@@ -23,6 +26,9 @@ public class Carte {
 	private byte[] photo;
 	
 	private String description;
+	
+	@OneToMany(mappedBy="carte")
+	private List<Exemplaire> exemplaires;
 	
 	@Enumerated(EnumType.STRING)
 	private Serie serie;
@@ -70,7 +76,15 @@ public class Carte {
 		IdCarte = idCarte;
 	}
 	
-	
+
+
+	public List<Exemplaire> getExemplaires() {
+		return exemplaires;
+	}
+
+	public void setExemplaires(List<Exemplaire> exemplaires) {
+		this.exemplaires = exemplaires;
+	}
 
 	public byte[] getPhoto() {
 		return photo;
