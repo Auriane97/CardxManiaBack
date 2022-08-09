@@ -42,17 +42,17 @@ public class Achat {
 	}
 	
 	
-	public Integer getIdAcheteur() {
-		return IdAcheteur;
-	}
-
-
-	public void setIdAcheteur(Integer idAcheteur) {
-		IdAcheteur = idAcheteur;
-	}
-
-
 	
+	public Integer getId() {
+		return Id;
+	}
+
+
+	public void setId(Integer id) {
+		Id = id;
+	}
+
+
 	public Lot getLot() {
 		return lot;
 	}
@@ -65,7 +65,7 @@ public class Achat {
 
 	@Override
 	public String toString() {
-		return "Achat [IdAcheteur=" + IdAcheteur + ", dateAchat=" + dateAchat + "]";
+		return "Achat [Id=" + Id + ", dateAchat=" + dateAchat + "]";
 	}
 
 

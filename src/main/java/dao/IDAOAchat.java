@@ -2,15 +2,18 @@ package dao;
 
 import java.util.List;
 
+
 import model.Achat;
+import model.Compte;
 
 
-public interface IDAOAchat {
+public interface IDAOAchat extends IDAO<Achat,Integer>{
 
-public interface IDAOachat extends IDAO<Achat,Integer>{
+	public List<Achat> findAllById(Integer id); 
+	public Compte findByIdwithCompte(Integer id);
+	
 
-	public List<Achat> findAllByUser(Integer idUser); 
+	
 }
 
 
-}

@@ -67,7 +67,7 @@ public class Carte {
 		this.serie = serie;
 	}
 
-	
+
 	public Integer getIdCarte() {
 		return IdCarte;
 	}
@@ -75,8 +75,6 @@ public class Carte {
 	public void setIdCarte(Integer idCarte) {
 		IdCarte = idCarte;
 	}
-	
-
 
 	public List<Exemplaire> getExemplaires() {
 		return exemplaires;

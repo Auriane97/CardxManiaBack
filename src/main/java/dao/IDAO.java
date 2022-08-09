@@ -2,6 +2,8 @@ package dao;
 
 import java.util.List;
 
+import model.Achat;
+
 
 public interface IDAO<T,K> {
 	
@@ -13,6 +15,9 @@ public interface IDAO<T,K> {
 	public List<T> findAll();
 	public T insert(T o);
 	public T update(T o);
+	public T save (T o);
 	public void delete(K id);
+	
+	
 	
 }

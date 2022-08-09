@@ -6,17 +6,18 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
+import context.Singleton;
 import model.Achat;
 
-public class DAOAchat implements IDAOAchat {
-/*
+public class DAOAchat implements IDAO<Achat,Integer> {
+
 	@Override
-	public achat findById(Integer id) {
-		achat a = null;
+	public Achat findById(Integer id) {
+		Achat a = null;
 		EntityManager em = null;
 		try {
 			em = Singleton.getInstance().getEmf().createEntityManager();
-			p = em.find(achat.class, idAcheteur);
+			a = em.find(Achat.class, id);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -29,8 +30,8 @@ public class DAOAchat implements IDAOAchat {
 	}
 
 	@Override
-	public List<achat> findAll() {
-		List<achat> achats = new ArrayList();
+	public List<Achat> findAll() {
+		List<Achat> achats = new ArrayList();
 		EntityManager em = null;
 		try {
 
@@ -47,7 +48,7 @@ public class DAOAchat implements IDAOAchat {
 	}
 
 	@Override
-	public achat save(achat a) {
+	public Achat save(Achat a) {
 
 		EntityManager em = null;
 		EntityTransaction tx = null;
@@ -55,7 +56,7 @@ public class DAOAchat implements IDAOAchat {
 			em = Singleton.getInstance().getEmf().createEntityManager();
 			tx = em.getTransaction();
 			tx.begin();
-			p = em.merge(a);
+			a = em.merge(a);
 			tx.commit();
 		} catch (Exception ex) {
 			ex.printStackTrace();
@@ -80,7 +81,7 @@ public class DAOAchat implements IDAOAchat {
 			em = Singleton.getInstance().getEmf().createEntityManager();
 			tx = em.getTransaction();
 			tx.begin();
-			achat a = em.find(achat.class, id);
+			Achat a = em.find(Achat.class, id);
 			em.remove(a);
 			tx.commit();
 		} catch (Exception ex) {
@@ -97,13 +98,13 @@ public class DAOAchat implements IDAOAchat {
 	}
 
 	@Override
-	public List<achat> findAllByUser(Integer idUser) {
-		List<achat> achats = new ArrayList();
+	public List<Achat> findAllById(Integer id) {
+		List<Achat> achats = new ArrayList();
 		EntityManager em = null;
 		try {
 
 			em = Singleton.getInstance().getEmf().createEntityManager();
-			achats = em.createQuery("SELECT a from achat a where a.user.id=:id").setParameter("id", idUser).getResultList();
+			achats = em.createQuery("SELECT a from achat a where a.user.id=:id").setParameter("id", id).getResultList();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -114,6 +115,18 @@ public class DAOAchat implements IDAOAchat {
 		return achats;
 	}
 
-	*/
+	@Override
+	public Achat insert(Achat o) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Achat update(Achat o) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
 
 }

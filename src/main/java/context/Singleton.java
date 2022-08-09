@@ -4,7 +4,17 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import dao.DAOAchat;
+import dao.DAOAdmin;
+import dao.DAOCompte;
+import dao.DAOExemplaire;
+import dao.DAOUser;
 import dao.IDAOAchat;
+import dao.IDAOAdmin;
+import dao.IDAOCarte;
+import dao.IDAOCompte;
+import dao.IDAOExemplaire;
+import dao.IDAOLot;
+import dao.IDAOUser;
 
 
 
@@ -14,13 +24,13 @@ private EntityManagerFactory emf = Persistence.createEntityManagerFactory("proje
 	
 
 	private IDAOAchat daoAchat = new DAOAchat();
-	/*private IDAOEvenement daoEvenement= new DAOEvenement();
-	private IDAOIntervenant daoIntervenant = new DAOIntervenant();
-	private IDAOParticipation daoParticipation = new DAOParticipation();
-	private IDAOPrestation daoPrestation = new DAOPrestation();
-	private IDAOSpectateur daoSpectateur = new DAOSpectateur();
+	private IDAOCompte daoCompte = new DAOCompte();
+	private IDAOCarte daoCarte = new DAOCarte();
+	private IDAOExemplaire daoExemplaire = new DAOExemplaire();
+	private IDAOLot daoLot = new DAOLot();
 	
-*/
+	
+
 	
 	
 	
@@ -55,64 +65,58 @@ private EntityManagerFactory emf = Persistence.createEntityManagerFactory("proje
 
 
 
-	/*public IDAOEvenement getDaoEvenement() {
-		return daoEvenement;
+
+
+	public IDAOCompte getDaoCompte() {
+		return daoCompte;
 	}
 
 
 
-	public void setDaoEvenement(IDAOEvenement daoEvenement) {
-		this.daoEvenement = daoEvenement;
+	public void setDaoCompte(IDAOCompte daoCompte) {
+		this.daoCompte = daoCompte;
 	}
 
 
 
-	public IDAOIntervenant getDaoIntervenant() {
-		return daoIntervenant;
+	public IDAOCarte getDaoCarte() {
+		return daoCarte;
 	}
 
 
 
-	public void setDaoIntervenant(IDAOIntervenant daoIntervenant) {
-		this.daoIntervenant = daoIntervenant;
+	public void setDaoCarte(IDAOCarte daoCarte) {
+		this.daoCarte = daoCarte;
 	}
 
 
 
-	public IDAOParticipation getDaoParticipation() {
-		return daoParticipation;
+	public IDAOExemplaire getDaoExemplaire() {
+		return daoExemplaire;
 	}
 
 
 
-	public void setDaoParticipation(IDAOParticipation daoParticipation) {
-		this.daoParticipation = daoParticipation;
+	public void setDaoExemplaire(IDAOExemplaire daoExemplaire) {
+		this.daoExemplaire = daoExemplaire;
 	}
 
 
 
-	public IDAOPrestation getDaoPrestation() {
-		return daoPrestation;
+	
+
+
+
+	public IDAOLot getDaoLot() {
+		return daoLot;
 	}
 
 
 
-	public void setDaoPrestation(IDAOPrestation daoPrestation) {
-		this.daoPrestation = daoPrestation;
+	public void setDaoLot(IDAOLot daoLot) {
+		this.daoLot = daoLot;
 	}
 
-
-
-	public IDAOSpectateur getDaoSpectateur() {
-		return daoSpectateur;
-	}
-
-
-
-	public void setDaoSpectateur(IDAOSpectateur daoSpectateur) {
-		this.daoSpectateur = daoSpectateur;
-	}
-*/
 
 
 	public EntityManagerFactory getEmf() {

@@ -5,58 +5,55 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+
+import gEvent.context.Singleton;
 import model.Admin;
 import model.Compte;
 import model.User;
 
-public class DAOCompte implements IDAO <Compte, String> {
+public class DAOCompte implements IDAOCompte {
 
-	
-
-@Override
-	public Compte findById(String pseudo) {
-			Compte c = null;
-		
-		
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-
-			Connection conn=DriverManager.getConnection(urlBdd, loginBdd,passwordBdd); 
-			PreparedStatement ps = conn.prepareStatement("SELECT * from compte where pseudo=?");
-			ps.setString(1,pseudo);
-
-
-			ResultSet rs = ps.executeQuery();
-
-			while(rs.next()) 
-			{
-				if(rs.getString("type_compte").equals("Admin"))	
-				{
-					c = new Admin(rs.getString("pseudo"),rs.getString("password"));
-				}
-				else
-				{
-					c = new User(rs.getString("pseudo"), rs.getString("password"));
-				}
-			}
-
-			rs.close();
-			ps.close();
-			conn.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return c;
-	}
 	
 
 	@Override
-	public List<Compte> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public Compte findById(Integer id) {
+		Compte m = null;
+		EntityManager em = null;
+		try {
+			em = Singleton.getInstance().getEmf().createEntityManager();
+			m = em.find(Compte.class, id);
+		}
+		catch(Exception e) {e.printStackTrace();}
+		finally {
+			if(em!=null) {em.close();}
+		}
+
+		return m;
 	}
+
+	@Override
+	public List<Compte> findAll() {
+		public List<Compte> findAll() {
+			List<Compte> personnes =new ArrayList();
+			EntityManager em = null;
+			try {
+
+				em = Singleton.getInstance().getEmf().createEntityManager();
+				personnes = em.createQuery("from Compte").getResultList();
+			}catch(Exception e) {e.printStackTrace();}
+			finally {
+				if(em!=null) 
+				{
+					em.close();
+				}
+			}
+			return personnes;
+		}
+
 
 public Compte seConnecter(String pseudo,String password) 
 	{
@@ -131,6 +128,19 @@ public Compte update(Compte c) {
 
 @Override
 public void delete(String pseudo) {
+	// TODO Auto-generated method stub
+	
+}
+
+
+@Override
+public Compte save(Compte o) {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public void delete(Integer id) {
 	// TODO Auto-generated method stub
 	
 }
