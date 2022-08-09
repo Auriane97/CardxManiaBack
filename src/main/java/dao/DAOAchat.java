@@ -9,7 +9,7 @@ import javax.persistence.EntityTransaction;
 import context.Singleton;
 import model.Achat;
 
-public class DAOAchat implements IDAO<Achat,Integer> {
+public class DAOAchat implements IDAOAchat{
 
 	@Override
 	public Achat findById(Integer id) {
@@ -97,7 +97,7 @@ public class DAOAchat implements IDAO<Achat,Integer> {
 
 	}
 
-	@Override
+	
 	public List<Achat> findAllById(Integer id) {
 		List<Achat> achats = new ArrayList();
 		EntityManager em = null;
@@ -126,7 +126,8 @@ public class DAOAchat implements IDAO<Achat,Integer> {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
+	
 	
 
 }

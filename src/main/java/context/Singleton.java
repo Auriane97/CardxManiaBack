@@ -5,6 +5,7 @@ import javax.persistence.Persistence;
 
 import dao.DAOAchat;
 import dao.DAOAdmin;
+import dao.DAOCarte;
 import dao.DAOCompte;
 import dao.DAOExemplaire;
 import dao.DAOUser;
