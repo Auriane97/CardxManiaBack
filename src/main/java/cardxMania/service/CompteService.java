@@ -5,7 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import cardxMania.dao.CompteRepository;
+import cardxMania.dao.IDAOCompte;
+import cardxMania.exception.CompteException;
 import cardxMania.model.Compte;
 
 @Service
@@ -22,7 +23,7 @@ public class CompteService {
 	}
 
 	public Compte getById(Integer id) {
-		return compteRepo.findById(id);
+		return compteRepo.findById(id).orElseThrow(CompteException::new);
 	}
 
 	public Compte create(Compte compte) {
