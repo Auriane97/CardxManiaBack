@@ -1,5 +1,7 @@
 package cardxMania.dao;
 
+import java.util.Optional;
+
 import javax.transaction.Transactional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -11,15 +13,12 @@ import cardxMania.model.Compte;
 
 public interface IDAOCompte extends JpaRepository<Compte,Integer> {
 	
-	@Query("select from Compte c where c.login=:login and c.password=:password")
-	public void seConnecter(@Param("login") String login, @Param("password") String password);
+	@Query("select from Compte c where c.login=:login")
+	public Optional<Compte> seConnecter(@Param("login") String login);
 	
-	@Query("")
-	public void createCompte();
-	
+		
 	@Modifying
 	@Transactional
 	@Query("delete from Compte c where c.login=:login")
-	public void deleteByCompte(@Param("login") Compte compte);
-
+	public void deleteByCompte(@Param("login") String login);
 }
