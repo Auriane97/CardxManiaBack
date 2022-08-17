@@ -14,7 +14,7 @@ public class CompteService {
 	
 
 	@Autowired
-	private CompteRepository compteRepo;
+	private IDAOCompte compteRepo;
 	
 
 	public List<Compte> getAll() {
