@@ -2,12 +2,7 @@ package test;
 
 import java.util.Scanner;
 
-import context.Singleton;
-import dao.DAOAchat;
-import dao.DAOAdmin;
-import dao.DAOCompte;
-import dao.DAOExemplaire;
-import dao.DAOUser;
+
 import model.Admin;
 import model.Compte;
 import model.User;
@@ -16,11 +11,11 @@ public class Test {
 
 
 	static Compte connected;
-	static DAOCompte daoC = new DAOCompte();
-	static DAOAdmin daoAd = new DAOAdmin();
-	static DAOAchat daoAc = new DAOAchat();
-	static DAOExemplaire daoE = new DAOExemplaire();
-	static DAOUser daoU = new DAOUser();
+//	static DAOCompte daoC = new DAOCompte();
+//	static DAOAdmin daoAd = new DAOAdmin();
+//	static DAOAchat daoAc = new DAOAchat();
+//	static DAOExemplaire daoE = new DAOExemplaire();
+//	static DAOUser daoU = new DAOUser();
 
 	static Integer code = 0;
 	static Integer total = 0;
@@ -195,7 +190,7 @@ public class Test {
 	{
 		String pseudo = saisieString("Saisir votre pseudo");
 		String password = saisieString("Saisir votre password");
-		connected = daoC.seConnecter(pseudo, password);
+		//connected = daoC.seConnecter(pseudo, password);
 
 		if(connected instanceof Admin) 
 		{
@@ -216,8 +211,6 @@ public class Test {
 
 
 	public static void main(String[] args) {
-
-		Singleton.getInstance();
 		
 		menuPrincipal();
 		inscription();
