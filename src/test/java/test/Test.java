@@ -2,10 +2,9 @@ package test;
 
 import java.util.Scanner;
 
-
-import model.Admin;
-import model.Compte;
-import model.User;
+import cardxMania.model.Admin;
+import cardxMania.model.Compte;
+import cardxMania.model.User;
 
 public class Test {
 

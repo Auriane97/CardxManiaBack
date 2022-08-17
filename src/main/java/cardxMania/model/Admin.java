@@ -1,4 +1,4 @@
-package model;
+package cardxMania.model;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
