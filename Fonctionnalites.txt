@@ -1,0 +1,45 @@
+----------- Fonctionnalités -----------
+- Admin
+	--> Se connecter / se deconnecter
+	--> Activer/ Desactiver des comptes
+	--> Supprimer des comptes
+
+- User
+	--> S'inscrire
+	--> Se connecter / se deconnecter
+	--> Acheter
+	--> Vendre : ajouter des cartes à la vente (nouvelle) / modifier une carte existante (vendre ou pas)
+	--> Historique de transactions
+	--> Voir son panier
+	--> Listes d'envies
+	--> Envoyer des messages **
+
+
+----------- Recherches -----------
+
+- User
+	--> Note
+	--> Nombre de cartes en vente
+	--> Lister les collections : Les cartes en vente dans chaque collection
+
+
+- Collections
+	--> Barre de recherche
+	--> Le nombre de cartes 
+	--> la valeur total
+	--> Grilles d'affichage
+
+
+
+- Cartes  
+	--> Différents exempalaires 
+	--> L'état
+	--> Le prix
+	--> Le vendeur
+	--> la quantité
+
+- Filtres : cartes, collections
+	--> Le prix
+	--> Etat
+	--> Note vendeur
+	--> Rareté
