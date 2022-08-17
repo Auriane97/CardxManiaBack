@@ -1,4 +1,4 @@
-package cardxMania.service;
+package cardxMania.exception;
 
 public class ExemplaireException extends RuntimeException {
 	public ExemplaireException() {

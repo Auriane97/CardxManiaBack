@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 
 import cardxMania.dao.IDAOExemplaire;
+import cardxMania.exception.ExemplaireException;
 import cardxMania.model.Exemplaire;
 
 
