@@ -1,4 +1,4 @@
-package model;
+package cardxMania.model;
 
 import java.time.LocalDate;
 import java.util.List;

@@ -1,4 +1,4 @@
-package dao;
+package cardxMania.dao;
 
 import java.util.List;
 
@@ -9,10 +9,9 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-
-import model.Achat;
-import model.Compte;
-import model.Exemplaire;
+import cardxMania.model.Achat;
+import cardxMania.model.Compte;
+import cardxMania.model.Exemplaire;
 
 
 public interface IDAOAchat extends JpaRepository<Achat,Integer>{

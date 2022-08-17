@@ -1,8 +1,8 @@
-package dao;
+package cardxMania.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import model.Carte;
+import cardxMania.model.Carte;
 
 public interface IDAOCarte extends JpaRepository<Carte,Integer>{
 	
