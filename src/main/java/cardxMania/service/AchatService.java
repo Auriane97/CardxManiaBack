@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cardxMania.dao.IDAOAchat;
-import cardxMania.dao.IDAOExemplaire;
 import cardxMania.exception.AchatException;
 import cardxMania.model.Achat;
 

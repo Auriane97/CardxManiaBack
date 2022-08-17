@@ -10,8 +10,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import cardxMania.model.Achat;
-import cardxMania.model.Compte;
-import cardxMania.model.Exemplaire;
 
 
 public interface IDAOAchat extends JpaRepository<Achat,Integer>{
@@ -19,13 +17,13 @@ public interface IDAOAchat extends JpaRepository<Achat,Integer>{
 
 	@Transactional
 	@Modifying
-	@Query("delete from Achat a where a.exemplaire.id=:id")
-	public void deleteByIdExemplaire(@Param("id") Integer id);
+	@Query("delete from Achat a where a.achat.id=:id")
+	public void deleteByIdachat(@Param("id") Integer id);
 
 	@Transactional
 	@Modifying
-	@Query("update Achat a set a.produit=null where a.exemplaire=:exemplaire")
-	public int setNullToExempalireByExemplaire(@Param("exemplaire") Exemplaire exemplaire);
+	@Query("update Achat a set a.achat=null where a.achat=:achat")
+	public int setNullToAchatByAchat(@Param("achat") Achat achat);
 	
 }
 
