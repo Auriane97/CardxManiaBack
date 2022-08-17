@@ -15,16 +15,13 @@ import cardxMania.model.Achat;
 public interface IDAOAchat extends JpaRepository<Achat,Integer>{
 
 
-	@Transactional
-	@Modifying
-	@Query("delete from Achat a where a.achat.id=:id")
-	public void deleteByIdachat(@Param("id") Integer id);
-
-	@Transactional
-	@Modifying
-	@Query("update Achat a set a.achat=null where a.achat=:achat")
-	public int setNullToAchatByAchat(@Param("achat") Achat achat);
 	
+
+//	@Transactional
+//	@Modifying
+//	@Query("update Achat a set a.achat=null where a.achat=:achat")
+//	public int setNullToAchatByAchat(@Param("achat") Achat achat);
+//	
 }
 
 

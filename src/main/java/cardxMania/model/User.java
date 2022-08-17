@@ -14,8 +14,8 @@ public class User extends Compte {
 		}
 	
 	
-	public User(String pseudo, String password, String mail, Integer code) {
-		super(pseudo, password, mail, code);
+	public User(String pseudo, String password, String mail) {
+		super(pseudo, password, mail);
 	}
 
 	public User(String pseudo, String password) {
@@ -25,7 +25,7 @@ public class User extends Compte {
 
 	@Override
 	public String toString() {
-		return "User [mail=" + mail + ", code=" + code + ", total=" + total + ", pseudo=" + pseudo + ", password="
+		return "User [mail=" + mail + ", id=" + id + ", total=" + total + ", pseudo=" + pseudo + ", password="
 				+ password + "]";
 	}
 	

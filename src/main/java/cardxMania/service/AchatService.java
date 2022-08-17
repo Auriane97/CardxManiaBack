@@ -37,7 +37,7 @@ public class AchatService {
 	}
 	
 	public void delete(Achat achat) {
-		achatRepo.setNullToAchatByAchat(achat);
+		//achatRepo.setNullToAchatByAchat(achat);
 		achatRepo.delete(achat);
 	}
 	

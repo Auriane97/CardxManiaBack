@@ -13,12 +13,12 @@ import cardxMania.model.Compte;
 
 public interface IDAOCompte extends JpaRepository<Compte,Integer> {
 	
-	@Query("select from Compte c where c.login=:login")
-	public Optional<Compte> seConnecter(@Param("login") String login);
+	
+	public Optional<Compte> findByPseudo (String pseudo);
 	
 		
 	@Modifying
 	@Transactional
-	@Query("delete from Compte c where c.login=:login")
-	public void deleteByCompte(@Param("login") String login);
+	@Query("delete from Compte c where c.pseudo=:pseudo")
+	public void deleteByCompte(@Param("pseudo") String pseudo);
 }

@@ -18,7 +18,7 @@ public abstract class Compte {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	protected Integer code;
+	protected Integer id;
 	
 	
 	protected String pseudo;
@@ -41,12 +41,12 @@ public abstract class Compte {
 		
 	}
 	
-	public Compte(String pseudo, String password, String mail, Integer code) {
+	public Compte(String pseudo, String password, String mail) {
 
 		this.pseudo = pseudo;
 		this.password = password;
 		this.mail=mail;
-		this.code=code;
+		
 		
 	}
 	
@@ -57,13 +57,13 @@ public abstract class Compte {
 	}
 
 
-	public Integer getCode() {
-		return code;
+	public Integer getId() {
+		return id;
 	}
 
 
-	public void setCode(Integer code) {
-		this.code = code;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 

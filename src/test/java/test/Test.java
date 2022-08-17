@@ -176,7 +176,7 @@ public class Test {
 		String mail = saisieString("Saisir votre mail : ");
 
 
-		User u = new User(pseudo,password,mail,code);
+		User u = new User(pseudo,password,mail);
 		//daoC.insert(u);
 		System.out.println("Vous etes inscrits, BIENVENUE ! ");
 
@@ -209,10 +209,10 @@ public class Test {
 
 
 
-	public static void main(String[] args) {
+	public static void run(String[] args) {
 		
-		menuPrincipal();
-		inscription();
+		//menuPrincipal();
+		//inscription();
 
 
 //test gitkraken louis
