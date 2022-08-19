@@ -13,6 +13,7 @@ import org.springframework.test.annotation.Commit;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import cardxMania.config.AppConfig;
+import cardxMania.model.Admin;
 import cardxMania.model.User;
 import cardxMania.service.CompteService;
 
@@ -30,7 +31,12 @@ public class CompteServiceTest {
 	@Test
 	//@Commit
 	public void test() {
-		compteService.create(new User("login","mdp","mail@mail.fr"));
+		compteService.create(new User ("Hanz","mdp123","hanz.dong@mail.fr"));
+		compteService.create(new User("John","Dov","JDoe@mail.fr"));
+		compteService.create(new User("Jack","Don","JackDoe@mail.fr"));
+		compteService.create(new User("Jessie","Din12","JessieDoe@mail.fr"));
+		compteService.create(new User("Jason","De66","JasonDoe@mail.fr"));
+		compteService.create(new Admin("Jordan","ABID"));
 	}
 
 }
