@@ -24,10 +24,5 @@ public class ExemplaireServicetest {
 		private ExemplaireService exemplaireService;
 	
 		
-	@Test
-		//@Commit
-		public void test() {
-			exemplaireService.create();
-		}
-
+	
 }

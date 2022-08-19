@@ -15,6 +15,8 @@ import cardxMania.model.Lot;
 		private IDAOLot lotRepo;
 		
 		public Lot update(Lot lot) {
+			
+			
 			return lotRepo.save(lot);
 		}
 

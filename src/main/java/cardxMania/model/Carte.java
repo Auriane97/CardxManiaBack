@@ -18,7 +18,7 @@ public class Carte {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	protected Integer IdCarte;
+	protected Integer id;
 	
 	protected int cote;
 	
@@ -68,12 +68,14 @@ public class Carte {
 	}
 
 
-	public Integer getIdCarte() {
-		return IdCarte;
+
+
+	public Integer getId() {
+		return id;
 	}
 
-	public void setIdCarte(Integer idCarte) {
-		IdCarte = idCarte;
+	public void setId(Integer idCarte) {
+		this.id = idCarte;
 	}
 
 	public List<Exemplaire> getExemplaires() {

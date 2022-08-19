@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 
 
@@ -18,14 +19,17 @@ public class Exemplaire {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
+	@OneToOne
+	private Achat achat;
+	
 	@ManyToOne
 	private Compte user;
 	
 	@Column(name="en_vente")
 	private boolean enVente;
 	
-	@Column(name="valeur_exempalire")
-	private transient Integer valeurExemplaire;
+	@Column(name="valeur_exemplaire")
+	private Integer valeurExemplaire;
 	
 	@ManyToOne
 	private Carte carte;

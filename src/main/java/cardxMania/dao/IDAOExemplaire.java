@@ -3,23 +3,24 @@ package cardxMania.dao;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 
+import cardxMania.model.Carte;
+import cardxMania.model.Compte;
+import cardxMania.model.Etat;
 import cardxMania.model.Exemplaire;
 
 public interface IDAOExemplaire extends JpaRepository<Exemplaire,Integer> {
 	
-	@Query("select e from Exemplaire e where e.user.id=:id")
-	public List <Exemplaire> findByUser(@Param("id") Integer id);
-
-	@Query("select e from Exemplaire e where e.carte.id=:id")
-	public List <Exemplaire> findByCarte(@Param("id") Integer id);
 	
-	public List<Exemplaire> findByEtat(String etat);
+	public List <Exemplaire> findByUser(Compte user);
+
+	
+	public List <Exemplaire> findByCarte(Carte carte);
+	
+	public List<Exemplaire> findByEtat(Etat etat);
 	
 	public List<Exemplaire> findByValeurExemplaire(Integer prix);
 
-	@Query("select e from Exemplaire e where e.enVente=TRUE")
-	public List<Exemplaire> findByEnVente(@Param("TRUE") boolean enVente );
+	
+	public List<Exemplaire> findByEnVente(boolean enVente);
 }
