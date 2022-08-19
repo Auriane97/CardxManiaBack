@@ -9,8 +9,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import cardxMania.config.AppConfig;
+import cardxMania.model.Etat;
 import cardxMania.model.Exemplaire;
-import cardxMania.service.CompteService;
 import cardxMania.service.ExemplaireService;
 
 
@@ -22,7 +22,15 @@ public class ExemplaireServicetest {
 		
 		@Autowired
 		private ExemplaireService exemplaireService;
-	
 		
+		
+	
+		@Test
+		//@Commit
+		public void test() {
+			ExemplaireService.create(new Exemplaire(true,c1,Etat.Abimee,u1));
+			ExemplaireService.create(new Exemplaire(true,c2,Etat.BonEtat,u2));
+		}
+
 	
 }
