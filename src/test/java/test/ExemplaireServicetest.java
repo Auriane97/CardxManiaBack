@@ -9,6 +9,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import cardxMania.config.AppConfig;
+import cardxMania.model.Etat;
 import cardxMania.model.Exemplaire;
 import cardxMania.service.ExemplaireService;
 
@@ -27,8 +28,8 @@ public class ExemplaireServicetest {
 		@Test
 		//@Commit
 		public void test() {
-			ExemplaireService.create(new Exemplaire(true,c1,1,u1));
-			ExemplaireService.create(new Exemplaire(true,c2,10,u2));
+			ExemplaireService.create(new Exemplaire(true,c1,Etat.Abimee,u1));
+			ExemplaireService.create(new Exemplaire(true,c2,Etat.BonEtat,u2));
 		}
 
 	
