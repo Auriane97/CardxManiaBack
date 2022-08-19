@@ -1,5 +1,6 @@
 package cardxMania.model;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -24,6 +25,8 @@ public class Lot {
 	private User acheteur;
 	@ManyToOne
 	private User vendeur;
+	
+	private LocalDate dateAchat;
 
 	
 	
@@ -31,10 +34,22 @@ public class Lot {
 	}
 
 	
-	public Lot(User acheteur, User vendeur) {
-	
+	public Lot(User acheteur, User vendeur, LocalDate dateAchat) {
+		super();
 		this.acheteur = acheteur;
 		this.vendeur = vendeur;
+		this.dateAchat = dateAchat;
+	}
+
+
+
+	public LocalDate getDateAchat() {
+		return dateAchat;
+	}
+
+
+	public void setDateAchat(LocalDate dateAchat) {
+		this.dateAchat = dateAchat;
 	}
 
 
@@ -87,12 +102,9 @@ public class Lot {
 
 	@Override
 	public String toString() {
-		return "Lot [note=" + note + ", acheteur=" + acheteur + ", vendeur=" + vendeur + "]";
+		return "Lot [note=" + note + ", acheteur=" + acheteur + ", vendeur=" + vendeur + ", dateAchat=" + dateAchat
+				+ "]";
 	}
-
-	
-
-	
 
 	
 

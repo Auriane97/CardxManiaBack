@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import cardxMania.dao.IDAOExemplaire;
 import cardxMania.exception.ExemplaireException;
 import cardxMania.model.Exemplaire;
+import eshop.exception.ProduitException;
 
 
 	@Service
@@ -22,8 +23,17 @@ import cardxMania.model.Exemplaire;
 		public List<Exemplaire> getAll() {
 			return exemplaireRepo.findAll();
 		}
+		
+		
+		public List<Exemplaire> getAllByCarte() {
+			return exemplaireRepo.findAllByCarte();
+		}
+		
+			
 		public Exemplaire getById(Integer id) {
-			return exemplaireRepo.findById(id).orElseThrow(ExemplaireException::new);
+			return exemplaireRepo.findById(id).orElseThrow(() -> {
+				throw new ExemplaireException("id exemplaire inconnu");
+			});
 		}
 
 		public Exemplaire create(Exemplaire exemplaire) {
@@ -38,4 +48,22 @@ import cardxMania.model.Exemplaire;
 			exemplaireRepo.deleteById(id);
 		}
 
+		public List<Exemplaire> getByVendeur(Integer id) {
+			return exemplaireRepo.findByVendeur(id).orElseThrow(() -> {
+				throw new ExemplaireException("id vendeur inconnu");
+			});
+		}
+		
+		public List<Exemplaire> getByEtat(int valeur) {
+			return exemplaireRepo.findByEtat(valeur).orElseThrow(() -> {
+				throw new ExemplaireException("etat non renseigné");
+			});
+		}
+		
+		public List<Exemplaire> getByValeurExemplaire(double valeurExemplaire) {
+			return exemplaireRepo.findByValeurExemplaire(valeur).orElseThrow(() -> {
+				throw new ExemplaireException("etat non renseigné");
+			});
+		}
+		
 }
