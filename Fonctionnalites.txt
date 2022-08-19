@@ -1,12 +1,13 @@
 ----------- Fonctionnalités -----------
+
+--> Se connecter / se deconnecter (Spring security)
+
 - Admin
-	--> Se connecter / se deconnecter
 	--> Activer/ Desactiver des comptes
 	--> Supprimer des comptes
 
 - User
 	--> S'inscrire
-	--> Se connecter / se deconnecter
 	--> Acheter
 	--> Vendre : ajouter des cartes à la vente (nouvelle) / modifier une carte existante (vendre ou pas)
 	--> Historique de transactions
@@ -23,22 +24,23 @@
 	--> Lister les collections : Les cartes en vente dans chaque collection
 
 
-- Collections
-	--> Barre de recherche
-	--> Le nombre de cartes 
-	--> la valeur total
-	--> Grilles d'affichage
+- Series
+	--> Barre de recherche (??)
+	--> Le nombre de cartes (findAllBySerie)
+	--> la valeur total (totalBySerie)
+	--> Grilles d'affichage (front-views)
 
 
 
-- Cartes  
-	--> Différents exempalaires 
-	--> L'état
-	--> Le prix
-	--> Le vendeur
-	--> la quantité
+- Carte  
+	--> Différents exempalaires (findAllByExemplaire)
+	--> L'état (findByEtat)
+	--> Le prix	(findByPrix)
+	--> Le vendeur (findByVendeur)
+	--> la quantité (findAll)
 
-- Filtres : cartes, collections
+
+- Filtres : cartes, Series  (Angular)
 	--> Le prix
 	--> Etat
 	--> Note vendeur
