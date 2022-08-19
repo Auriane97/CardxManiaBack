@@ -39,11 +39,11 @@
 
 
 - Exemplaire 
-	--> Différentes cartes (findAllByCarte)
-	--> L'état (findByEtat)
-	--> Le prix	(findByPrix)
-	--> Le vendeur (findByVendeur)
-	--> la quantité (findAll)
+	//--> Différentes cartes (findAllByCarte)//
+	//--> L'état (findByEtat)//
+	//--> Le prix	(findByValeurExemplaire)//
+	// --> Le vendeur (findByVendeur) //
+	//--> la quantité (findAll)//
 
 - Lot
 	--> Update exemplaire par id compte

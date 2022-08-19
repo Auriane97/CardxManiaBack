@@ -16,7 +16,7 @@ public class Achat {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer Id;
 	
-	private LocalDate dateAchat;
+	
 	
 	@ManyToOne
 	private Lot lot;
@@ -25,21 +25,6 @@ public class Achat {
 	
 	public Achat() {}
 
-
-	public Achat(LocalDate dateAchat) {
-		super();
-		this.dateAchat = dateAchat;
-		
-	}
-	
-	
-	public LocalDate getDateAchat() {
-		return dateAchat;
-	}
-
-	public void setDateAchat(LocalDate dateAchat) {
-		this.dateAchat = dateAchat;
-	}
 	
 	
 	
@@ -63,10 +48,16 @@ public class Achat {
 	}
 
 
+
+
 	@Override
 	public String toString() {
-		return "Achat [Id=" + Id + ", dateAchat=" + dateAchat + "]";
+		return "Achat [Id=" + Id + ", lot=" + lot + "]";
 	}
+
+
+	
+	
 
 
 
