@@ -10,4 +10,15 @@ public interface IDAOExemplaire extends JpaRepository<Exemplaire,Integer> {
 	@Query("select e from Exemplaire e where e.user.id=:id")
 	public void findAllByUser(Integer id);
 
+	//ALBAN
+	
+	
+	
+	//AURIANNE
+	
+	
+	
+	//LOUIS
+	
+	
 }
