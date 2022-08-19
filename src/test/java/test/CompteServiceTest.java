@@ -29,7 +29,7 @@ public class CompteServiceTest {
 	private CompteService compteService;
 	
 	@Test
-	//@Commit
+	@Commit
 	public void test() {
 		compteService.create(new User ("Hanz","mdp123","hanz.dong@mail.fr"));
 		compteService.create(new User("John","Dov","JDoe@mail.fr"));

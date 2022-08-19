@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cardxMania.dao.IDAOLot;
+import cardxMania.model.Carte;
 import cardxMania.model.Lot;
 
 
@@ -20,6 +21,14 @@ import cardxMania.model.Lot;
 			return lotRepo.save(lot);
 		}
 
+		public Lot create(Lot lot) {
+			return lotRepo.save(lot);
+		}
+
 		
+
+		public void deleteById(Integer id) {
+			lotRepo.deleteById(id);
+		}
 		
 }

@@ -17,9 +17,23 @@ public class Achat {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer Id;
 	
-	@OneToOne
+	@ManyToOne
 	private Exemplaire exemplaire;
 	
+	public Exemplaire getExemplaire() {
+		return exemplaire;
+	}
+
+
+
+
+	public void setExemplaire(Exemplaire exemplaire) {
+		this.exemplaire = exemplaire;
+	}
+
+
+
+
 	@ManyToOne
 	private Lot lot;
 	

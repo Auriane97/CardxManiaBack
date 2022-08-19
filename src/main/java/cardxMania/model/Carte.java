@@ -22,8 +22,8 @@ public class Carte {
 	
 	protected int cote;
 	
-	@Lob
-	private transient byte[] photo;
+	//@Lob
+	//private transient byte[] photo;
 	
 	private String description;
 	
@@ -86,13 +86,13 @@ public class Carte {
 		this.exemplaires = exemplaires;
 	}
 
-	public byte[] getPhoto() {
-		return photo;
-	}
-
-	public void setPhoto(byte[] photo) {
-		this.photo = photo;
-	}
+//	public byte[] getPhoto() {
+//		return photo;
+//	}
+//
+//	public void setPhoto(byte[] photo) {
+//		this.photo = photo;
+//	}
 
 	public String toString() {
 		return "Carte [cote=" + cote + ", description=" + description + ", serie=" + serie + "]";

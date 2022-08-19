@@ -1,5 +1,7 @@
 package cardxMania.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -8,7 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 
 
 
@@ -19,8 +21,8 @@ public class Exemplaire {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@OneToOne
-	private Achat achat;
+	@OneToMany(mappedBy="exemplaire")
+	private List<Achat> achats;
 	
 	@ManyToOne
 	private Compte user;
@@ -107,6 +109,14 @@ public class Exemplaire {
 		this.etat = etat;
 	}
 
+
+	public List<Achat> getAchats() {
+		return achats;
+	}
+
+	public void setAchats(List<Achat> achats) {
+		this.achats = achats;
+	}
 
 	@Override
 	public String toString() {
