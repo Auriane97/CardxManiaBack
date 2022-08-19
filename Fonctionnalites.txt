@@ -5,21 +5,27 @@
 - Admin
 	--> Activer/ Desactiver des comptes
 	--> Supprimer des comptes
+	
+	--> Cartes CRUD
 
+		
+		
 - User
 	--> S'inscrire
 	--> Acheter
-	--> Vendre : ajouter des cartes à la vente (nouvelle) / modifier une carte existante (vendre ou pas)
+	--> Vendre : ajouter des exemplaires à la vente (nouvelle) / modifier une exemplaire existante (vendre ou pas)
 	--> Historique de transactions
 	--> Voir son panier
 	--> Listes d'envies
-	--> Envoyer des messages **
+	
+	
+	
 
 
 ----------- Recherches -----------
 
 - User
-	--> Note
+	--> Note vente (ajouter dans user)
 	--> Nombre de cartes en vente
 	--> Lister les collections : Les cartes en vente dans chaque collection
 
@@ -32,16 +38,35 @@
 
 
 
-- Carte  
-	--> Différents exempalaires (findAllByExemplaire)
+- Exemplaire 
+	--> Différentes cartes (findAllByCarte)
 	--> L'état (findByEtat)
 	--> Le prix	(findByPrix)
 	--> Le vendeur (findByVendeur)
 	--> la quantité (findAll)
 
+- Lot
+	--> Update exemplaire par id compte
+
 
 - Filtres : cartes, Series  (Angular)
+	--> Disponibilité à la vente
 	--> Le prix
 	--> Etat
 	--> Note vendeur
 	--> Rareté
+
+	
+	
+	
+	
+	
+	
+	--------------------- Idées V2 	--------------------- 
+	
+- Possibilité de faire des enchères
+- Envoyer des messages **
+	
+	
+	
+	

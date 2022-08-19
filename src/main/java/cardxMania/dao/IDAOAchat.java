@@ -16,12 +16,6 @@ public interface IDAOAchat extends JpaRepository<Achat,Integer>{
 
 
 	
-
-//	@Transactional
-//	@Modifying
-//	@Query("update Achat a set a.achat=null where a.achat=:achat")
-//	public int setNullToAchatByAchat(@Param("achat") Achat achat);
-//	
 }
 
 
