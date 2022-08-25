@@ -22,8 +22,8 @@ public class Carte {
 	
 	protected int cote;
 	
-	//@Lob
-	//private transient byte[] photo;
+	@Lob
+	private transient byte[] photo;
 	
 	private String description;
 	

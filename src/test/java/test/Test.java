@@ -209,7 +209,7 @@ public class Test {
 
 
 
-	public static void run(String[] args) {
+	public void run(String[] args) {
 		
 		//menuPrincipal();
 		//inscription();

@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cardxMania.dao.IDAOLot;
-import cardxMania.model.Carte;
 import cardxMania.model.Lot;
 
 

@@ -1,6 +1,5 @@
 package cardxMania.model;
 
-import javax.persistence.Entity;
 
 public enum Etat {
 

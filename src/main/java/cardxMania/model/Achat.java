@@ -1,21 +1,19 @@
 package cardxMania.model;
 
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+
 
 @Entity
 public class Achat {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer Id;
+	private Integer id;
 	
 	@ManyToOne
 	private Exemplaire exemplaire;
@@ -45,12 +43,12 @@ public class Achat {
 	
 	
 	public Integer getId() {
-		return Id;
+		return id;
 	}
 
 
 	public void setId(Integer id) {
-		Id = id;
+		this.id = id;
 	}
 
 
@@ -68,7 +66,7 @@ public class Achat {
 
 	@Override
 	public String toString() {
-		return "Achat [Id=" + Id + ", lot=" + lot + "]";
+		return "Achat [Id=" + id + ", lot=" + lot + "]";
 	}
 
 

@@ -10,11 +10,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import cardxMania.config.AppConfig;
-import cardxMania.model.Carte;
 import cardxMania.model.Etat;
 import cardxMania.model.Exemplaire;
-import cardxMania.model.Serie;
-import cardxMania.model.User;
 import cardxMania.service.CarteService;
 import cardxMania.service.CompteService;
 import cardxMania.service.ExemplaireService;
