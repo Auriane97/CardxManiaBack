@@ -18,30 +18,23 @@ public class Achat {
 	@ManyToOne
 	private Exemplaire exemplaire;
 	
-	public Exemplaire getExemplaire() {
-		return exemplaire;
-	}
-
-
-
-
-	public void setExemplaire(Exemplaire exemplaire) {
-		this.exemplaire = exemplaire;
-	}
-
-
-
 
 	@ManyToOne
 	private Lot lot;
 	
-	
-	
+
 	public Achat() {}
 
-	
-	
-	
+
+	public Achat(Exemplaire exemplaire, Lot lot) {
+		super();
+		this.exemplaire = exemplaire;
+		this.lot = lot;
+	}
+
+
+
+
 	public Integer getId() {
 		return id;
 	}
@@ -61,6 +54,14 @@ public class Achat {
 		this.lot = lot;
 	}
 
+	public Exemplaire getExemplaire() {
+		return exemplaire;
+	}
+	
+
+	public void setExemplaire(Exemplaire exemplaire) {
+		this.exemplaire = exemplaire;
+	}
 
 
 

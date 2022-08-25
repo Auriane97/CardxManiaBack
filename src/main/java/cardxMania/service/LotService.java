@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cardxMania.dao.IDAOLot;
+import cardxMania.exception.LotException;
 import cardxMania.model.Lot;
 
 
@@ -13,6 +14,10 @@ import cardxMania.model.Lot;
 		
 		@Autowired
 		private IDAOLot lotRepo;
+		
+		public Lot getById(Integer id) {
+			return lotRepo.findById(id).orElseThrow(LotException::new);
+		}
 		
 		public Lot update(Lot lot) {
 			
