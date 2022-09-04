@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cardxMania.dao.IDAOCarte;
+import cardxMania.dao.IDAOCompte;
 import cardxMania.exception.CarteException;
 import cardxMania.model.Carte;
 import cardxMania.model.Serie;
@@ -15,7 +16,6 @@ public class CarteService {
 	
 	@Autowired
 	private IDAOCarte carteRepo;
-	
 	
 	public List<Carte> getAll() {
 		return carteRepo.findAll();
@@ -47,7 +47,7 @@ public class CarteService {
 	
 	//on va chercher les cartes avce le compte user associés
 	public Carte getByIdWithCompte(Integer id) {
-		return carteRepo.findByIdWithProduit(id).orElseThrow(CarteException::new);
+		return carteRepo.findByIdWithCompte(id).orElseThrow(CarteException::new);
 	}
 
 }
